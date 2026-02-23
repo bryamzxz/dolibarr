@@ -126,10 +126,6 @@ $permissionnote = $user->hasRight('facture', 'creer'); // Used by the include of
 $permissiondellink = $user->hasRight('facture', 'creer'); // Used by the include of actions_dellink.inc.php
 $permissiontoedit = $user->hasRight('facture', 'creer'); // Used by the include of actions_lineupdonw.inc.php
 $permissiontoeditextra = $permissiontoadd;
-if (GETPOST('attribute', 'aZ09') && isset($extrafields->attributes[$object->table_element]['perms'][GETPOST('attribute', 'aZ09')])) {
-	// For action 'update_extras', is there a specific permission set for the attribute to update
-	$permissiontoeditextra = dol_eval((string) $extrafields->attributes[$object->table_element]['perms'][GETPOST('attribute', 'aZ09')]);
-}
 
 $usercanread = $user->hasRight('facture', 'lire');
 $usercancreate = $user->hasRight('facture', 'creer');

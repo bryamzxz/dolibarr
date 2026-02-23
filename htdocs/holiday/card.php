@@ -123,10 +123,6 @@ if ($user->hasRight('holiday', 'writeall')) {
 	$permissiontoaddall = 1;
 }
 $permissiontoeditextra = $permissiontoadd;
-if (GETPOST('attribute', 'aZ09') && isset($extrafields->attributes[$object->table_element]['perms'][GETPOST('attribute', 'aZ09')])) {
-	// For action 'update_extras', is there a specific permission set for the attribute to update
-	$permissiontoeditextra = dol_eval((string) $extrafields->attributes[$object->table_element]['perms'][GETPOST('attribute', 'aZ09')]);
-}
 
 $candelete = 0;
 if ($user->hasRight('holiday', 'delete')) {

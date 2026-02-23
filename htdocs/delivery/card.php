@@ -102,15 +102,7 @@ $permissiontovalidate = ((!getDolGlobalString('MAIN_USE_ADVANCED_PERMS') && $use
 $permissionnote = $user->hasRight('expedition', 'delivery', 'creer'); // Used by the include of actions_setnotes.inc.php
 $permissiondellink = $user->hasRight('expedition', 'delivery', 'creer'); // Used by the include of actions_dellink.inc.php
 $permissiontoeditextra = $permissiontoadd;
-if (GETPOST('attribute', 'aZ09') && isset($extrafields->attributes[$object->table_element]['perms'][GETPOST('attribute', 'aZ09')])) {
-	// For action 'update_extras', is there a specific permission set for the attribute to update
-	$permissiontoeditextra = dol_eval((string) $extrafields->attributes[$object->table_element]['perms'][GETPOST('attribute', 'aZ09')]);
-}
 $permissiontoeditextraline = $permissiontoadd;
-if (GETPOST('attribute', 'aZ09') && isset($extrafields->attributes[$object->table_element_line]['perms'][GETPOST('attribute', 'aZ09')])) {
-	// For action 'update_extras', is there a specific permission set for the attribute to update
-	$permissiontoeditextraline = dol_eval((string) $extrafields->attributes[$object->table_element_line]['perms'][GETPOST('attribute', 'aZ09')]);
-}
 
 
 /*

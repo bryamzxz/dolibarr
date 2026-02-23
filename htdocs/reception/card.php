@@ -172,10 +172,6 @@ if (isModEnabled("reception")) {
 	$permissiontodelete = $user->hasRight('fournisseur', 'commande', 'receptionner');
 }
 $permissiontoeditextra = $permissiontoadd;
-if (GETPOST('attribute', 'aZ09') && isset($extrafields->attributes[$object->table_element]['perms'][GETPOST('attribute', 'aZ09')])) {
-	// For action 'update_extras' there is a specific permission set for the attribute to update
-	$permissiontoeditextra = dol_eval((string) $extrafields->attributes[$object->table_element]['perms'][GETPOST('attribute', 'aZ09')]);
-}
 
 $editColspan = 0;
 $objectsrc = null;
